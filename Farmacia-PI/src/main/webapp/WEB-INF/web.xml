@@ -12,6 +12,10 @@
         <servlet-name>ListarClienteServlet</servlet-name>
         <servlet-class>br.senac.conexaobd.servlet.ListarClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ClienteFarmaciaSerlvet</servlet-name>
+        <servlet-class>com.sp.senac.farmacia.pi.servlet.ClienteFarmaciaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ListarClienteServlet</servlet-name>
         <url-pattern>/cliente/ListarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteFarmaciaSerlvet</servlet-name>
+        <url-pattern>/ClienteFarmaciaSerlvet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
