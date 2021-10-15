@@ -21,14 +21,14 @@ public class Cliente {
     private int id;
     private String nome;
     private String email;
-    private String cpf;
-    private String telefone;
+    private String CPF;
+    private String telCliente;
   
     
 
     @Override
     public String toString() {
-        return "nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", telefone=" + telefone;
+        return "nome=" + nome + ", email=" + email + ", cpf=" + CPF + ", telefone=" + telCliente;
     }
     
     
