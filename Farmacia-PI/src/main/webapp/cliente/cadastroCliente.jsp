@@ -13,6 +13,7 @@
         <title>Cadastrar Cliente</title>
     </head>
     <body>
+        <h1>Cadastro de Cliente</h1>
         <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
             User ID : <input type="text" readonly="readonly" name="id"
                              value="<c:out value="${cliente.id}" />" /> <br /> 
@@ -31,15 +32,8 @@
                            value="<c:out value="${cliente.email}" />" /> <br /> 
 
             <input type="submit" value="Cadastrar" />
-
+            <input type="hidden" name="action" value="incluir"/>
 
         </form>
-                           <br/>
-                           <br/>
-                           <br/>
-                           <br/>
-
-
-
     </body>
 </html>

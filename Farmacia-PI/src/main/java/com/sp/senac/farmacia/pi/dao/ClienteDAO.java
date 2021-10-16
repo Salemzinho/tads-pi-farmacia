@@ -144,31 +144,6 @@ public class ClienteDAO {
         }
 
         return listaCliente;
-
-        /*List<Cliente> listaClientes = new ArrayList<>();
-        String query = "select * from cliente;";
-
-        Connection con = Conexao.getConexao();
-        try {
-            PreparedStatement ps = con.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Cliente cli = new Cliente();
-                String nome = rs.getString("nome");
-                String email = rs.getString("email");
-                String telefone = rs.getString("telCliente");
-                String CPF = rs.getString("CPF");
-                cli.setNome(nome);
-                cli.setEmail(email);
-                cli.setCPF(CPF);
-                cli.setTelCliente(telefone);
-
-                listaClientes.add(cli);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return listaClientes;*/
     }
 
     public Cliente getClienteId(int id) {
@@ -194,4 +169,32 @@ public class ClienteDAO {
 
     }
 
+    public List<Cliente> getClienteNome(String busca) {  //PORQUE SÓ RETORNA O 1O CLIENTE?
+
+        List<Cliente> listaCliente = new ArrayList<Cliente>();
+        //Cliente cli = new Cliente();
+
+        try {
+            PreparedStatement ps = con.prepareStatement("select * from cliente where nome like ?;");
+            ps.setString(1, '%' + busca + '%');
+            ResultSet rs = ps.executeQuery();
+            //Cliente cli = new Cliente();
+            
+            if (rs.next()) {
+                Cliente cli = new Cliente();
+                cli.setId(rs.getInt("id"));
+                cli.setNome(rs.getString("nome"));
+                cli.setCPF(rs.getString("CPF"));
+                cli.setTelCliente(rs.getString("telCliente"));
+                cli.setEmail(rs.getString("email"));
+
+                listaCliente.add(cli);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listaCliente;
+    }
 }
