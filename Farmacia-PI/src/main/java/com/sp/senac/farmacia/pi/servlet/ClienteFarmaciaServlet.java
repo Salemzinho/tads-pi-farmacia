@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,6 +41,7 @@ public class ClienteFarmaciaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static String INSERT_OR_EDIT = "/cliente/cadastroCliente.jsp";
     private static String LIST_USER = "/cliente/listaCliente.jsp";
+    private static String PESQUISA = "/cliente/pesquisarCliente.jsp";
     private ClienteDAO dao;
 
     public ClienteFarmaciaServlet() throws ClassNotFoundException, SQLException {
@@ -72,7 +74,11 @@ public class ClienteFarmaciaServlet extends HttpServlet {
             forward = LIST_USER;
             request.setAttribute("clientes", dao.getTodosClientes());
 
-        } else {
+        } else if (action.equalsIgnoreCase("pesquisar")) {
+
+            forward = PESQUISA;
+
+        } else if (action.equalsIgnoreCase("incluir")) {
 
             forward = INSERT_OR_EDIT;
 
@@ -86,31 +92,47 @@ public class ClienteFarmaciaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Cliente cli = new Cliente();
-        cli.setNome(request.getParameter("nome"));
-        cli.setCPF(request.getParameter("CPF"));
-        cli.setTelCliente(request.getParameter("telCliente"));
-        cli.setEmail(request.getParameter("email"));
+        String action = request.getParameter("action");
 
-        String idCliente = request.getParameter("id");
-        try {
+        if (action.equalsIgnoreCase("pesquisa")) { //parametro do botao
+            //aqui deve entrar o codigo para comunicar com a dao que vem de pesquisarCliente.jsp
+            
+            //PORQUE SÓ RETORNA O 1O CLIENTE?
+            
+            String nomeCliente = request.getParameter("busca");
+                      
+            RequestDispatcher view = request.getRequestDispatcher(LIST_USER);
+            request.setAttribute("clientes", dao.getClienteNome(nomeCliente));
+            view.forward(request, response);
+            
+        } else if (action.equalsIgnoreCase("incluir")) {
 
-            if (idCliente == null || idCliente.isEmpty()) {
+            //fazer o if vindo do pesquisarCliente
+            //isso vai dentro do else
+            Cliente cli = new Cliente();
+            cli.setNome(request.getParameter("nome"));
+            cli.setCPF(request.getParameter("CPF"));
+            cli.setTelCliente(request.getParameter("telCliente"));
+            cli.setEmail(request.getParameter("email"));
 
-                dao.addCliente(cli);
+            String idCliente = request.getParameter("id");
+            try {
 
-            } else {
-                cli.setId(Integer.parseInt(idCliente));
-                dao.updateCliente(cli);
-
+                if (idCliente == null || idCliente.isEmpty()) {
+                    dao.addCliente(cli); //metodo para adcionar
+                } else {
+                    cli.setId(Integer.parseInt(idCliente));
+                    dao.updateCliente(cli); //metodo atualizar
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ClienteFarmaciaServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteFarmaciaServlet.class.getName()).log(Level.SEVERE, null, ex);
+
+            //aqui pra baixo é fora do if else
+            RequestDispatcher view = request.getRequestDispatcher(LIST_USER);
+            request.setAttribute("clientes", dao.getTodosClientes());
+            view.forward(request, response);
+
         }
-
-        RequestDispatcher view = request.getRequestDispatcher(LIST_USER);
-        request.setAttribute("clientes", dao.getTodosClientes());
-        view.forward(request, response);
-
     }
 }
