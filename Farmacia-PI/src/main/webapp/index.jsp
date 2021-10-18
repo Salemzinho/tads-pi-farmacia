@@ -15,13 +15,10 @@
     </head>
 
     <body class="container">
-        <div><h1>Menu:</h1></div>
-        <!-- NAO FUNCIONA O CADASTRO
-        <a href="cliente/cadastroCliente.jsp">Cadastrar</a><br/>
-        <a href="cliente/pesquisarCliente.jsp">Pesquisar</a><br/>
-        -->
+        <div><h1>Menu:</h1></div>       
+        <p><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></p>
+        <p><a href="ProdutoServlet?action=listaProdutos">Produtos</a></p>
         
-        <a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a><br/>
     </body>
 
 

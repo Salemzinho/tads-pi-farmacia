@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
@@ -61,7 +61,7 @@ public class ClienteDAO {
         ps.execute();*/
     }
 
-    public void deleteCliente(int id) {
+    public void deleteCliente(int id)  {
         try {
             PreparedStatement ps = con
                     .prepareStatement("delete from cliente where id=?;");
@@ -92,7 +92,7 @@ public class ClienteDAO {
     public void updateCliente(Cliente cli) {
         try {
             PreparedStatement ps = con
-                    .prepareStatement("update cliente set nome=?, CPF=?, telCliente=?, email=? where id=?");
+                    .prepareStatement("update cliente set nome=?, CPF=?, telCliente=?, email=? where id=?;");
 
             ps.setString(1, cli.getNome());
             ps.setString(2, cli.getCPF());
@@ -131,6 +131,7 @@ public class ClienteDAO {
             ResultSet rs = stmt.executeQuery("select * from cliente;");
             while (rs.next()) {
                 Cliente cli = new Cliente();
+                
                 cli.setId(rs.getInt("id"));
                 cli.setNome(rs.getString("nome"));
                 cli.setCPF(rs.getString("CPF"));
@@ -182,6 +183,7 @@ public class ClienteDAO {
             
             if (rs.next()) {
                 Cliente cli = new Cliente();
+                
                 cli.setId(rs.getInt("id"));
                 cli.setNome(rs.getString("nome"));
                 cli.setCPF(rs.getString("CPF"));

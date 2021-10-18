@@ -15,7 +15,7 @@
     <body>
         <h1>Cadastro de Cliente</h1>
         <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
-            User ID : <input type="text" readonly="readonly" name="id"
+            Cliente ID : <input type="text" readonly="readonly" name="id"
                              value="<c:out value="${cliente.id}" />" /> <br /> 
             Nome : <input
                 type="text" name="nome"
