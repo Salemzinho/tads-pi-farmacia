@@ -63,7 +63,6 @@ public class ClienteFarmaciaServlet extends HttpServlet {
             request.setAttribute("clientes", dao.getTodosClientes());
 
         } else if (action.equalsIgnoreCase("alterar")) {
-
             forward = INSERT_OR_EDIT;
             int idCliente = Integer.parseInt(request.getParameter("id"));
             Cliente cli = dao.getClienteId(idCliente);

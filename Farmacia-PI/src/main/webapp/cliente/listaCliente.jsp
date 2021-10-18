@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="${pageContext.request.contextPath}/lib/jquery-3.6.0.min.js" type="text/javascript"></script>
-        <title>Lista de Clientes</title>
+        <title>Clientes</title>
     </head>
     <body>
         
@@ -53,4 +53,5 @@
         na pagnia pesquisar seguir o mesmo fluxo do cadastro-->
 
     </body>
+    <a href="${pageContext.request.contextPath}/index.jsp">Voltar para Index</a>
 </html>

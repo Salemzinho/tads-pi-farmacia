@@ -12,19 +12,22 @@ import lombok.Setter;
  *
  * @author maris
  */
+
 @Getter
 @Setter
-public class Cliente {
-
+public class Produto {
+    
     private int id;
     private String nome;
-    private String email;
-    private String CPF;
-    private String telCliente;
-
+    private String fabricante;
+    private int qtd;
+    private double valor;
+    
     @Override
-    public String toString() {
-        return "nome=" + nome + ", email=" + email + ", cpf=" + CPF + ", telefone=" + telCliente;
+    public String toString(){
+        return "nome=" + nome + ", fabricante=" + fabricante + ", qtd=" + qtd + ", valor=" + valor;
     }
-
+    
+    
+    
 }
