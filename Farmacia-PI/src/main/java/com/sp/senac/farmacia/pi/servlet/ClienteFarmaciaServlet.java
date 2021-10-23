@@ -95,8 +95,7 @@ public class ClienteFarmaciaServlet extends HttpServlet {
 
         if (action.equalsIgnoreCase("pesquisa")) { //parametro do botao
             //aqui deve entrar o codigo para comunicar com a dao que vem de pesquisarCliente.jsp
-            
-            //PORQUE SÓ RETORNA O 1O CLIENTE?
+                        //PORQUE SÓ RETORNA O 1O CLIENTE?
             
             String nomeCliente = request.getParameter("busca");
                       

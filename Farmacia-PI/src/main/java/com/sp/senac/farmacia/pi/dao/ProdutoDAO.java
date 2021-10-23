@@ -139,7 +139,7 @@ public class ProdutoDAO {
              ps.setString(1, '%' + busca + '%');
              ResultSet rs = ps.executeQuery();
              
-             if(rs.next()){
+             while(rs.next()){
                  Produto pro = new Produto();
                  
                  pro.setId(rs.getInt("id"));
