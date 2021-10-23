@@ -181,7 +181,7 @@ public class ClienteDAO {
             ResultSet rs = ps.executeQuery();
             //Cliente cli = new Cliente();
             
-            if (rs.next()) {
+            while (rs.next()) {
                 Cliente cli = new Cliente();
                 
                 cli.setId(rs.getInt("id"));
