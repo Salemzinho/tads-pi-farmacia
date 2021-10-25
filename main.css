@@ -1,0 +1,102 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #f43f33;
+    width: 100%;
+    height: 80px;
+    margin: 0.1px;
+}
+
+header h1 {
+    float: left;
+    color: white;
+    font-family: arial;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+header nav {
+    float: right;
+    margin-top: 30px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: white;
+    font-family: arial;
+}
+
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.card-login {
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.card-login img {
+    height: 130px;
+    width: 130px;
+    margin-top: 30px;
+}
+
+.centralizar-img {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card-login form {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.card-login input {
+    border: 0px;
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+#input-enviar {
+    border: 0px;
+    width: 400px;
+    height: 40px;
+    margin-top: 80px;
+    background-color: #f43f33;
+    color: white;
+    border-radius: 4px;
+}
+
+#input-enviar:hover {
+    border: solid #f43f33 2px;
+    color: #f43f33;
+    background-color: transparent;
+    transition: .2s;
+}
+
+.card-login input:hover {
+    transition: .3s;
+    border-bottom: solid #f43f33 3px;
+}
