@@ -37,14 +37,10 @@
             <h2>Cadastro Cliente</h2>
         </div>
         <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
-            <input type="text" readonly="readonly" name="id" placeholder="ID"
-                             value="<c:out value="${cliente.id}"  />" />
+            <input type="text" readonly="readonly" name="id" placeholder="ID" value="<c:out value="${cliente.id}"  />" />
+            <input type="text" name="nome" placeholder="Nome" value="<c:out value="${cliente.nome}" />" />
             <input
-                type="text" name="nome" placeholder="Nome"
-                value="<c:out value="${cliente.nome}" />" />
-            <input
-                type="text" name="CPF" placeholder="CPF"
-                value="<c:out value="${cliente.CPF}" />" />
+                type="text" name="CPF" placeholder="CPF" value="<c:out value="${cliente.CPF}" />" />
             <input
                 type="text" name="telCliente" placeholder="Telefone"
                 value="<c:out value="${cliente.telCliente}" />" />
