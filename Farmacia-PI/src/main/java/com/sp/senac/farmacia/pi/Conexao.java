@@ -39,7 +39,6 @@ public class Conexao {
             }
             return connection;
         }
-
     }
 
     // CONEXAO COM MYSQL LOCAL
