@@ -18,7 +18,7 @@
         <div><h1>Menu:</h1></div>       
         <p><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></p>
         <p><a href="ProdutoServlet?action=listaProdutos">Produtos</a></p>
-        
+        <p><a href="VendaServlet?action=listaProdutos">Venda</a></p>
     </body>
 
 

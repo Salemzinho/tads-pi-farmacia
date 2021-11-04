@@ -9,8 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -28,9 +27,9 @@ public class Conexao {
                 Properties prop = new Properties();
 
                 String user = "root";
-                String password = "";
+                String password = "1234";
                 Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/senac", user, password);
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/farmacia?useSSL=false", user, password);
 
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

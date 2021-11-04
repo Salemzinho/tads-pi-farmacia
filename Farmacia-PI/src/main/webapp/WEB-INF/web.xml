@@ -16,6 +16,10 @@
         <servlet-name>ClienteFarmaciaSerlvet</servlet-name>
         <servlet-class>com.sp.senac.farmacia.pi.servlet.ClienteFarmaciaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VendaServlet</servlet-name>
+        <servlet-class>com.sp.senac.farmacia.pi.servlet.VendaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ClienteFarmaciaSerlvet</servlet-name>
         <url-pattern>/ClienteFarmaciaSerlvet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaServlet</servlet-name>
+        <url-pattern>/VendaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
