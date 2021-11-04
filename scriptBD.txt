@@ -42,3 +42,51 @@ insert into cliente (nome, CPF, telCliente, email) values
 ("Luan", "333.333.333-33", "(33)33333-3333", "luan@email.com"),
 ("Matheus", "444.444.444-44", "(44)44444-4444", "matheus@email.com"),
 ("Vinicius", "555.555.555-55", "(55)55555-5555", "vinicius@email.com");
+
+CREATE TABLE IF NOT EXISTS farmacia.Venda (
+  id INT NOT NULL auto_increment,
+  valorFinal DOUBLE NOT NULL,
+  idCliente INT NULL,
+  dtvenda DATE not null,
+  PRIMARY KEY (id),
+  FOREIGN KEY (idCliente) REFERENCES farmacia.Cliente (id))
+ENGINE = InnoDB;
+
+select * from venda v;
+
+INSERT INTO farmacia.venda (valorFinal, idCliente, dtvenda) values
+(23.46, 1, '2021-05-10'),
+(38.45, 2, '2021-03-15'),
+(29.23, 3, '2021-05-21'),
+(29.23, 4, '2021-05-21'),
+(66.87, 2, '2021-05-21'),
+(118.84, 1, '2021-05-21');
+
+-- -----------------------------------------------------
+-- Table mydb.ItemVenda
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS farmacia.ItemVenda (
+  idVenda INT NOT NULL,
+  idProduto INT NOT NULL,
+  quantidade INT NOT NULL,
+  FOREIGN KEY (idProduto) REFERENCES farmacia.Produto (id),
+  FOREIGN KEY (idVenda) REFERENCES farmacia.Venda (id))
+ENGINE = InnoDB;
+
+select * from itemvenda i ;
+
+INSERT INTO farmacia.itemvenda (idVenda, idProduto, quantidade) VALUES(1, 2, 1),
+(1, 4, 3),
+(2, 4, 1),
+(2, 6, 4),
+(3, 4, 1),
+(3, 3, 6),
+(3, 2, 2),
+(4, 4, 1),
+(4, 3, 6),
+(4, 2, 2),
+(5, 2, 1),
+(5, 2, 6),
+(5, 4, 6),
+(6, 4, 6),
+(6, 6, 10);
