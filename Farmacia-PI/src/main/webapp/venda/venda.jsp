@@ -53,7 +53,6 @@
                         <th>CPF</th>
                         <th>Telefone</th>
                         <th>E-mail</th>
-                        <th colspan=2>Action</th>
                     </tr>
                 </thead>
 
@@ -65,9 +64,6 @@
                             <td><c:out value="${cliente.CPF}"/></td>
                             <td><c:out value="${cliente.telCliente}"/></td>
                             <td><c:out value="${cliente.email}"/></td>
-
-                            <td><a href="ClienteFarmaciaServlet?action=alterar&id=<c:out value="${cliente.id}"/>">Alterar</a></td>
-                            <td><a href="ClienteFarmaciaServlet?action=excluir&id=<c:out value="${cliente.id}"/>">Excluir</a></td>
                         </tr>
                     </c:forEach>
 
@@ -88,8 +84,6 @@
             
             <input type="submit" value="Cadastrar" />
             <input type="hidden" name="action" value="incluir"/>
-        </form>
-        
-        <button type="submit" value="Cadastrar">Click Me!</button>
+        </form>        
     </body>
 </html>
