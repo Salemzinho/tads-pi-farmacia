@@ -14,7 +14,7 @@
         <title>Document</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/main.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar Cliente</title>
     </head>
@@ -24,10 +24,10 @@
             <h1>Farmacia</h1>
             <nav>
                 <ul>
-                    <li><a href="cadastro-produto.html">Cadastro Produtos</a></li>
-                    <li><a href="cadastro-cliente.html">Cadastro Cliente</a></li>
-                    <li><a href="vendas.html">Vendas</a></li>
-                    <li><a href="relatorios.html">Relatórios</a></li>
+                    <li><a href="ProdutoServlet?action=incluir">Cadastro Produtos</a></li>
+                    <li><a href="ClienteFarmaciaServlet?action=incluir">Cadastro Cliente</a></li>
+                    <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
+                    <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
@@ -36,18 +36,20 @@
         
     <div class="card-cadastro-cliente">
         <div class="card-nome">
-            <h2>Cadastro Produto</h2>
+            <h2>Cadastro Cliente</h2>
         </div>
         <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
-            <input id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${cliente.id}" />" />
             
-            <input style="width: 320px;" type="text" name="nome" value="<c:out value="${cliente.nome}" />" />
+            <input placeholder="ID" id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${cliente.id}" />" />
             
-            <input type="text" name="CPF" value="<c:out value="${cliente.CPF}" />" />
+            
+            <input placeholder="Nome" style="width: 320px;" type="text" name="nome" value="<c:out value="${cliente.nome}" />" />
+            
+            <input placeholder="CPF" type="text" name="CPF" value="<c:out value="${cliente.CPF}" />" />
 
-            <input type="text" name="telCliente" value="<c:out value="${cliente.telCliente}" />" />
+            <input placeholder="Telefone" type="text" name="telCliente" value="<c:out value="${cliente.telCliente}" />" />
 
-            <input type="text" name="email" value="<c:out value="${cliente.email}" />" />
+            <input placeholder="E-mail" type="text" name="email" value="<c:out value="${cliente.email}" />" />
 
             <input type="submit" value="Cadastrar" />
             <input type="hidden" name="action" value="incluir"/>

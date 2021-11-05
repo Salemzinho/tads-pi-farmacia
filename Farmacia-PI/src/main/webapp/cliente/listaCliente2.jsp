@@ -18,7 +18,7 @@
         <title>Clientes</title>
         
         <!-- CSS -->
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
      <header>
@@ -26,10 +26,10 @@
             <h1>Farmacia</h1>
             <nav>
                 <ul>
-                    <li><a href="cadastro-produto.html">Cadastro Produtos</a></li>
-                    <li><a href="cadastro-cliente.html">Cadastro Cliente</a></li>
-                    <li><a href="vendas.html">Vendas</a></li>
-                    <li><a href="relatorios.html">Relatórios</a></li>
+                    <li><a href="ProdutoServlet?action=incluir">Cadastro Produtos</a></li>
+                    <li><a href="ClienteFarmaciaServlet?action=incluir">Cadastro Cliente</a></li>
+                    <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
+                    <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
@@ -65,7 +65,7 @@
             </tbody>
         </table>
 
-        <p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>
+            <!--<p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>-->
         <p><a href="ClienteFarmaciaServlet?action=pesquisar">Pesquisar Cliente</a></p>
         <!-- Aqui entra o pesquisar cliente que direciona pra pagina como no cadastro. 
         na pagnia pesquisar seguir o mesmo fluxo do cadastro-->

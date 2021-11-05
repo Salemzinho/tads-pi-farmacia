@@ -11,10 +11,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        
-        
-         <link rel="stylesheet" href="main.css">
+        <title>Vendas</title>
+              
+         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <div class="card-cadastro-cliente">

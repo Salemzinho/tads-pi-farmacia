@@ -41,12 +41,12 @@
 
                         <td><a href="ClienteFarmaciaServlet?action=alterar&id=<c:out value="${cliente.id}"/>">Alterar</a></td>
                         <td><a href="ClienteFarmaciaServlet?action=excluir&id=<c:out value="${cliente.id}"/>">Excluir</a></td>
-                    </tr>
+                    </tr>  <!--colocar /protegido no web xlm??? talvez precise-->
                 </c:forEach>
 
             </tbody>
         </table>
-
+                    <!--colocar /protegido no web xlm??? talvez precise se quebrar-->
         <p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>
         <p><a href="ClienteFarmaciaServlet?action=pesquisar">Pesquisar Cliente</a></p>
         <!-- Aqui entra o pesquisar cliente que direciona pra pagina como no cadastro. 

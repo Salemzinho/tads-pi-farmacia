@@ -17,7 +17,7 @@
         <title>Produtos</title>
         
         <!-- CSS -->
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/main.css">
 
     </head>
     <body>
@@ -26,10 +26,11 @@
             <h1>Farmacia</h1>
             <nav>
                 <ul>
-                    <li><a href="cadastro-produto.html">Cadastro Produtos</a></li>
-                    <li><a href="cadastro-cliente.html">Cadastro Cliente</a></li>
-                    <li><a href="vendas.html">Vendas</a></li>
-                    <li><a href="relatorios.html">Relatórios</a></li>
+                    <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
+                    <li><a href="ProdutoServlet?action=incluir">Cadastro Produtos</a></li>
+                    <li><a href="ClienteFarmaciaServlet?action=incluir">Cadastro Cliente</a></li>
+                    <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
+                    <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
@@ -64,7 +65,7 @@
             </tbody>
         </table>
         
-        <p><a href="ProdutoServlet?action=incluir">Cadastrar Produto</a></p>
+        <!--<p><a href="ProdutoServlet?action=incluir">Cadastrar Produto</a></p>-->
         <p><a href="ProdutoServlet?action=pesquisar">Pesquisar Produto</a></p>
         </div>
         
