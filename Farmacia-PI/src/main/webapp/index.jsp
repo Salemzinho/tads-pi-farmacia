@@ -19,6 +19,7 @@
         <p><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></p>
         <p><a href="ProdutoServlet?action=listaProdutos">Produtos</a></p>
         <p><a href="VendaServlet?action=listaProdutos">Venda</a></p>
+        <p><a href="RelatorioServlet?action=listaVendas">Relatório</a></p>
     </body>
 
 

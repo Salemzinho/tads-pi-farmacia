@@ -12,9 +12,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+        
+         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <div>
+        <div class="card-cadastro-cliente">
                 <h1>Produtos em estoque</h1>
                  <table class="table">
                     <thead>
@@ -43,7 +46,8 @@
                         </c:forEach>
                     </tbody>
                 </table>
-
+            </div>
+            <div class="card-cadastro-cliente">
             <h1>Clientes Encontrados</h1>
             <table  class="table">
                 <thead>
@@ -69,17 +73,17 @@
 
                 </tbody>
             </table>
-    </div>
+            </div>
         
         <h1>Cadastrar Venda</h1>
         <form method="POST" action='VendaServlet' name="frmCadastroVenda">
-            Produto : <input type="text" name="produto"
+            ID Produto : <input type="text" name="produto"
                           value="<c:out value="${venda.produto}" />" /> <br /> 
 
             Qtd produto : <input type="text" name="qtd"
                           value="<c:out value="${venda.qtd}" />" /> <br /> 
 
-            Cliente : <input type="text" name="cliente" 
+            ID Cliente : <input type="text" name="cliente" 
                             value="<c:out value="${venda.cliente}"/>" /> <br />
             
             <input type="submit" value="Cadastrar" />

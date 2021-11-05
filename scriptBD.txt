@@ -43,13 +43,13 @@ insert into cliente (nome, CPF, telCliente, email) values
 ("Matheus", "444.444.444-44", "(44)44444-4444", "matheus@email.com"),
 ("Vinicius", "555.555.555-55", "(55)55555-5555", "vinicius@email.com");
 
-CREATE TABLE IF NOT EXISTS farmacia.Venda (
+CREATE TABLE IF NOT EXISTS Venda (
   id INT NOT NULL auto_increment,
   valorFinal DOUBLE NOT NULL,
   idCliente INT NULL,
   dtvenda DATE not null,
   PRIMARY KEY (id),
-  FOREIGN KEY (idCliente) REFERENCES farmacia.Cliente (id))
+  FOREIGN KEY (idCliente) REFERENCES Cliente (id))
 ENGINE = InnoDB;
 
 select * from venda v;
@@ -65,17 +65,17 @@ INSERT INTO farmacia.venda (valorFinal, idCliente, dtvenda) values
 -- -----------------------------------------------------
 -- Table mydb.ItemVenda
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS farmacia.ItemVenda (
+CREATE TABLE IF NOT EXISTS ItemVenda (
   idVenda INT NOT NULL,
   idProduto INT NOT NULL,
   quantidade INT NOT NULL,
-  FOREIGN KEY (idProduto) REFERENCES farmacia.Produto (id),
-  FOREIGN KEY (idVenda) REFERENCES farmacia.Venda (id))
+  FOREIGN KEY (idProduto) REFERENCES Produto (id),
+  FOREIGN KEY (idVenda) REFERENCES Venda (id))
 ENGINE = InnoDB;
 
 select * from itemvenda i ;
 
-INSERT INTO farmacia.itemvenda (idVenda, idProduto, quantidade) VALUES(1, 2, 1),
+INSERT INTO itemvenda (idVenda, idProduto, quantidade) VALUES(1, 2, 1),
 (1, 4, 3),
 (2, 4, 1),
 (2, 6, 4),
