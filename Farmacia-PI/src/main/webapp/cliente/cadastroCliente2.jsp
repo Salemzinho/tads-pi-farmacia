@@ -1,6 +1,6 @@
 <%-- 
-    Document   : cadastroProduto
-    Created on : 16 de out de 2021, 15:31:30
+    Document   : cadastroCliente
+    Created on : 15 de out de 2021, 17:17:40
     Author     : maris
 --%>
 
@@ -15,9 +15,9 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="main.css">
-        <title>Cadastrar Produto</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cadastrar Cliente</title>
     </head>
-    
     <body>
         <header>
         <div class="container">
@@ -38,21 +38,22 @@
         <div class="card-nome">
             <h2>Cadastro Produto</h2>
         </div>
-        <form method="POST" action='ProdutoServlet' name="frmCadastroProduto">
-            <input id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${produto.id}" />" />
-
-            <input style="width: 320px;" type="text" name="nome" value="<c:out value="${produto.nome}" />" />
-
-            <input type="text" name="fabricante" value="<c:out value="${produto.fabricante}"/>" />
+        <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
+            <input id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${cliente.id}" />" />
             
-            <input type="text" name="qtd" value="<c:out value="${produto.qtd}"/>" />
+            <input style="width: 320px;" type="text" name="nome" value="<c:out value="${cliente.nome}" />" />
             
-            <input type="text" name="valor" value="<c:out value="${produto.valor}"/>" />
+            <input type="text" name="CPF" value="<c:out value="${cliente.CPF}" />" />
+
+            <input type="text" name="telCliente" value="<c:out value="${cliente.telCliente}" />" />
+
+            <input type="text" name="email" value="<c:out value="${cliente.email}" />" />
 
             <input type="submit" value="Cadastrar" />
             <input type="hidden" name="action" value="incluir"/>
+
         </form>
     </div>
-    <br>
+        <br>
     </body>
 </html>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : listaProduto
-    Created on : 16 de out de 2021, 15:23:54
+    Document   : CadastroCliente
+    Created on : 15 de out de 2021, 16:28:47
     Author     : maris
 --%>
 
@@ -14,14 +14,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Document</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Produtos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Clientes</title>
         
         <!-- CSS -->
         <link rel="stylesheet" href="main.css">
-
     </head>
     <body>
-    <header>
+     <header>
         <div class="container">
             <h1>Farmacia</h1>
             <nav>
@@ -39,35 +40,37 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID Produto</th>
+                    <th>ID Cliente</th>
                     <th>Nome</th>
-                    <th>Fabricante</th>
-                    <th>QTD</th>
-                    <th>Valor</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
                     <th colspan=2>Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <c:forEach items="${produtos}" var="produto">
+                <c:forEach items="${clientes}" var="cliente">
                     <tr>
-                        <td><c:out value="${produto.id}"/></td>
-                        <td><c:out value="${produto.nome}"/></td>
-                        <td><c:out value="${produto.fabricante}"/></td>
-                        <td><c:out value="${produto.qtd}"/></td>
-                        <td><c:out value="${produto.valor}"/></td>
+                        <td><c:out value="${cliente.id}"/></td>
+                        <td><c:out value="${cliente.nome}"/></td>
+                        <td><c:out value="${cliente.CPF}"/></td>
+                        <td><c:out value="${cliente.telCliente}"/></td>
+                        <td><c:out value="${cliente.email}"/></td>
 
-                        <td><a href="ProdutoServlet?action=alterar&id=<c:out value="${produto.id}"/>">Alterar</a></td>
-                        <td><a href="ProdutoServlet?action=excluir&id=<c:out value="${produto.id}"/>">Excluir</a></td>
+                        <td><a href="ClienteFarmaciaServlet?action=alterar&id=<c:out value="${cliente.id}"/>">Alterar</a></td>
+                        <td><a href="ClienteFarmaciaServlet?action=excluir&id=<c:out value="${cliente.id}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
+
             </tbody>
         </table>
-        
-        <p><a href="ProdutoServlet?action=incluir">Cadastrar Produto</a></p>
-        <p><a href="ProdutoServlet?action=pesquisar">Pesquisar Produto</a></p>
-        </div>
-        
+
+        <p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>
+        <p><a href="ClienteFarmaciaServlet?action=pesquisar">Pesquisar Cliente</a></p>
+        <!-- Aqui entra o pesquisar cliente que direciona pra pagina como no cadastro. 
+        na pagnia pesquisar seguir o mesmo fluxo do cadastro-->
+
     </body>
     <a href="${pageContext.request.contextPath}/index.jsp">Voltar para Index</a>
 </html>
