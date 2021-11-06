@@ -10,48 +10,70 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="${pageContext.request.contextPath}/lib/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Clientes</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        
-        <h1>Clientes Encontrados</h1>
-
-        <table  class="table">
-            <thead>
-                <tr>
-                    <th>ID Cliente</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>E-mail</th>
-                    <th colspan=2>Action</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <c:forEach items="${clientes}" var="cliente">
+        <header>
+            <div class="container">
+                <h1>Farmacia</h1>
+                <nav>
+                    <ul>
+                        <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
+                        <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
+                        <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
+                        <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
+                        <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="card-cadastro-cliente">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td><c:out value="${cliente.id}"/></td>
-                        <td><c:out value="${cliente.nome}"/></td>
-                        <td><c:out value="${cliente.CPF}"/></td>
-                        <td><c:out value="${cliente.telCliente}"/></td>
-                        <td><c:out value="${cliente.email}"/></td>
+                        <th>ID Cliente</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th colspan=2>Action</th>
+                    </tr>
+                </thead>
 
-                        <td><a href="ClienteFarmaciaServlet?action=alterar&id=<c:out value="${cliente.id}"/>">Alterar</a></td>
-                        <td><a href="ClienteFarmaciaServlet?action=excluir&id=<c:out value="${cliente.id}"/>">Excluir</a></td>
-                    </tr>  <!--colocar /protegido no web xlm??? talvez precise-->
-                </c:forEach>
+                <tbody>
+                    <c:forEach items="${clientes}" var="cliente">
+                        <tr>
+                            <td><c:out value="${cliente.id}"/></td>
+                            <td><c:out value="${cliente.nome}"/></td>
+                            <td><c:out value="${cliente.CPF}"/></td>
+                            <td><c:out value="${cliente.telCliente}"/></td>
+                            <td><c:out value="${cliente.email}"/></td>
 
-            </tbody>
-        </table>
-                    <!--colocar /protegido no web xlm??? talvez precise se quebrar-->
-        <p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>
-        <p><a href="ClienteFarmaciaServlet?action=pesquisar">Pesquisar Cliente</a></p>
-        <!-- Aqui entra o pesquisar cliente que direciona pra pagina como no cadastro. 
-        na pagnia pesquisar seguir o mesmo fluxo do cadastro-->
+                            <td><a href="ClienteFarmaciaServlet?action=alterar&id=<c:out value="${cliente.id}"/>">Alterar</a></td>
+                            <td><a href="ClienteFarmaciaServlet?action=excluir&id=<c:out value="${cliente.id}"/>">Excluir</a></td>
+                        </tr>
+                    </c:forEach>
+
+                </tbody>
+            </table>
+            
+            </br>
+
+            <p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>
+            </br>
+            <p><a href="ClienteFarmaciaServlet?action=pesquisar">Pesquisar Cliente</a></p>
+            <!-- Aqui entra o pesquisar cliente que direciona pra pagina como no cadastro. 
+            na pagnia pesquisar seguir o mesmo fluxo do cadastro-->
 
     </body>
-    <a href="${pageContext.request.contextPath}/index.jsp">Voltar para Index</a>
+    <!--<a href="${pageContext.request.contextPath}/index.jsp">Voltar para Index</a>-->
 </html>

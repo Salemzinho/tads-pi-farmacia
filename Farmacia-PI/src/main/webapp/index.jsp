@@ -15,28 +15,30 @@
         <title>FARMÁCIA-PI</title>
     </head>
 
-    <body class="container">
-        <div><h1>Menu:</h1>
-
+        <header>
+        <div class="container">
+            <h1>Farmacia</h1>
             <nav>
                 <ul>
                     <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
-                    <li><a href="ProdutoServlet?action=incluir">Cadastro Produtos</a></li>
-                    <li><a href="ClienteFarmaciaServlet?action=incluir">Cadastro Cliente</a></li>
+                    <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
+                    <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
                     <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
                     <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
-
-        </div>       
-        <!--<p><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></p>
-        <p><a href="ProdutoServlet?action=listaProdutos">Produtos</a></p>
-        <p><a href="VendaServlet?action=listaProdutos">Venda</a></p>
-        <p><a href="RelatorioServlet?action=listaVendas">Relatório</a></p>-->
-    </body>
-
-
-
-
+        </div>
+    </header>
+     <div class="card-cadastro-cliente">
+        <div class="card-nome">
+            <h2>Home</h2>
+        </div>
+        <a href="ClienteFarmaciaServlet?action=listaClientes"><button class="home-button">Clientes</button></a>
+        <a href="ProdutoServlet?action=listaProdutos"><button class="home-button">Produtos</button></a>
+        <a href="VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
+        <a href="RelatorioServlet?action=listaVendas"><button class="home-button">Relatório</button></a>
+     </div>
+    <br>
+</body>
 </html>

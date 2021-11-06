@@ -9,29 +9,51 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastrar Produto</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/main.css">
+        
     </head>
+    
     <body>
-        <h1>Cadastro de Produtos</h1>
+        <header>
+        <div class="container">
+            <h1>Farmacia</h1>
+            <nav>
+                <ul>
+                    <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
+                    <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
+                    <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
+                    <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
+                    <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        
+    <div class="card-cadastro-cliente">
+        <div class="card-nome">
+            <h2>Cadastro Produto</h2>
+        </div>
         <form method="POST" action='ProdutoServlet' name="frmCadastroProduto">
-            Produto ID : <input type="text" readonly="readonly" name="id"
-                                value="<c:out value="${produto.id}" />" /> <br />
+            <input placeholder="ID" id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${produto.id}" />" />
 
-            Nome : <input type="text" name="nome"
-                          value="<c:out value="${produto.nome}" />" /> <br /> 
+            <input placeholder="Produto" style="width: 320px;" type="text" name="nome" value="<c:out value="${produto.nome}" />" />
 
-            Fabricante : <input type="text" name="fabricante" 
-                            value="<c:out value="${produto.fabricante}"/>" /> <br />
+            <input placeholder="Fabricante" type="text" name="fabricante" value="<c:out value="${produto.fabricante}"/>" />
             
-            QTD : <input type="text" name="qtd" 
-                            value="<c:out value="${produto.qtd}"/>" /> <br />
+            <input placeholder="QTD" type="text" name="qtd" value="<c:out value="${produto.qtd}"/>" />
             
-            Valor : <input type="text" name="valor"
-                           value="<c:out value="${produto.valor}"/>" /> <br />
+            <input placeholder="Valor" type="text" name="valor" value="<c:out value="${produto.valor}"/>" />
 
             <input type="submit" value="Cadastrar" />
             <input type="hidden" name="action" value="incluir"/>
         </form>
+    </div>
+    <br>
     </body>
 </html>

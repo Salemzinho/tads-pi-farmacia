@@ -10,12 +10,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Produtos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/main.css">
+
     </head>
     <body>
-        <h1>Produtos em estoque</h1>
-
+    <header>
+        <div class="container">
+            <h1>Farmacia</h1>
+            <nav>
+                <ul>
+                    <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
+                    <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
+                    <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
+                    <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
+                    <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <div class="card-cadastro-cliente">
         <table class="table">
             <thead>
                 <tr>
@@ -46,7 +67,8 @@
         
         <p><a href="ProdutoServlet?action=incluir">Cadastrar Produto</a></p>
         <p><a href="ProdutoServlet?action=pesquisar">Pesquisar Produto</a></p>
+        </div>
         
     </body>
-    <a href="${pageContext.request.contextPath}/index.jsp">Voltar para Index</a>
+    <!--<a href="${pageContext.request.contextPath}/index.jsp">Voltar para Index</a>-->
 </html>
