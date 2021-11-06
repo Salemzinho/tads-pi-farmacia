@@ -20,33 +20,34 @@
     </head>
     <body>
         <header>
-        <div class="container">
-            <h1>Farmacia</h1>
-            <nav>
-                <ul>
-                    <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
-                    <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
-                    <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
-                    <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
-                    <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            <div class="container">
+                <h1>Farmacia</h1>
+                <nav>
+                    <ul>
+                        <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
+                        <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
+                        <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
+                        <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
+                        <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
         <div class="card-cadastro-cliente">
-        <h1>Consulta de Produtos</h1>
-        
+            <div class="card-nome">
+                <h2>Consulta Produto</h2>
+            </div>
+          
+            <form method="POST" action='ProdutoServlet' name="frmPesquisaProduto">
+                <input placeholder="Pesquisa por nome" type="text" name="busca"
+                                           value="<c:out value="${produto.busca}" />" /> <br />
 
-        <form method="POST" action='ProdutoServlet' name="frmPesquisaProduto">
-            Pesquisa por Nome : <input type="text" name="busca"
-                                       value="<c:out value="${produto.busca}" />" /> <br />
-
-            <input type="submit" value="Pesquisar"/>
-            <input type="hidden" name="action" value="pesquisa"/>
+                <input type="submit" value="Pesquisar"/>
+                <input type="hidden" name="action" value="pesquisa"/>
 
 
-        </form>
+            </form>
         </div>
     </body>
 </html>
