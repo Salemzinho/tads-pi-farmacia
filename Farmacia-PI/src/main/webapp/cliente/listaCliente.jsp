@@ -31,7 +31,8 @@
                         <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
                         <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
                         <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.jsp">Login</a></li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
                     </ul>
                 </nav>
             </div>
@@ -65,7 +66,7 @@
 
                 </tbody>
             </table>
-            
+
             </br>
 
             <p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>
