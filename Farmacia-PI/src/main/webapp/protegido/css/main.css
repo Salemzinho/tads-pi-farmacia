@@ -1,0 +1,352 @@
+
+.home-button{
+    border: solid #1B98E0 2px;
+    width: 400px;
+    height: 60px;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #1B98E0;
+    background-color: white;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.home-button a{
+    color: #1B98E0;
+}
+
+.home-button:hover{
+    transition: .4s;
+    background-color: #1B98E0;
+    color: white;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: rgb(230, 230, 230);
+}
+
+header {
+    background-color: #1B98E0;
+    width: 100%;
+    height: 80px;
+    margin: 0.1px;
+}
+
+header h1 {
+    float: left;
+    color: white;
+    font-family: arial;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+header nav {
+    float: right;
+    margin-top: 30px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: white;
+    font-family: arial;
+}
+
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.card-login {
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.card-login img {
+    height: 130px;
+    width: 130px;
+    margin-top: 30px;
+}
+
+.centralizar-img {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card-login form {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.card-login input {
+    border: 0px;
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 4px;
+}
+
+#input-enviar {
+    border: 0px;
+    width: 400px;
+    height: 40px;
+    margin-top: 80px;
+    background-color: #f43f33;
+    color: white;
+    border-radius: 4px;
+}
+
+#input-enviar:hover {
+    border: solid #f43f33 2px;
+    color: #f43f33;
+    background-color: transparent;
+    transition: .2s;
+}
+
+.card-login input:hover {
+    transition: .3s;
+    border-bottom: solid #1B98E0 3px;
+}
+
+
+/* CADASTRO CLIENTE */
+
+.card-cadastro-cliente {
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.card-cadastro-cliente h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.card-nome {
+    width: 200px;
+    height: 30px;
+    background-color: #1B98E0;
+    border-radius: 4px;
+    margin-left: 300px;
+    text-align: center;
+}
+
+.card-cadastro-cliente form {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.card-cadastro-cliente input {
+    border: 0px;
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 4px;
+}
+
+#input-enviar {
+    border: 0px;
+    width: 400px;
+    height: 40px;
+    margin-top: 80px;
+    background-color: #1B98E0;
+    color: white;
+    border-radius: 4px;
+}
+
+#input-enviar:hover {
+    border: solid #1B98E0 2px;
+    color: #1B98E0;
+    background-color: transparent;
+    transition: .2s;
+}
+
+.card-cadastro-cliente input:hover {
+    transition: .3s;
+    border-bottom: solid #1B98E0 3px;
+}
+
+
+
+
+/* VENDAS */
+
+.card-vendas {
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.card-vendas h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.card-vendas form {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.card-vendas input {
+    border: 0px;
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 4px;
+}
+
+.card-cadastro-cliente input:hover {
+    transition: .3s;
+    border-bottom: solid #1B98E0 3px;
+}
+
+
+#id-produto{
+    margin-right: 20px;
+    width: 60px;
+}
+
+.display-flex{
+    display: flex;
+    margin: 0 auto;
+    margin-left: 50px;
+}
+
+
+
+
+#id-vendas{
+    margin-right: 20px;
+    width: 200px;
+}
+
+.display-flex{
+    display: flex;
+    margin: 0 auto;
+    margin-left: 50px;
+}
+
+
+/* RELATORIOS */
+
+.card-relatorio-analitico{
+    float: left;
+    margin-left: 130px;
+}
+
+.card-relatorio-sintetico{
+    float: right;
+    margin-right: 130px;
+}
+
+
+.card-relatorio-analitico {
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.card-relatorio-analitico  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.card-relatorio-analitico form {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.card-relatorio-analitico input {
+    border: 0px;
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 4px;
+}
+
+.card-relatorio-analitico input:hover {
+    transition: .3s;
+    border-bottom: solid #f43f33 3px;
+}
+
+.card-relatorio-sintetico {
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.card-relatorio-sintetico  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.card-relatorio-sintetico form {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.card-relatorio-sintetico input {
+    border: 0px;
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 4px;
+}
+
+.card-relatorio-sintetico input:hover {
+    transition: .3s;
+    border-bottom: solid #1B98E0 3px;
+}
+
+
+#id-produto{
+    margin-right: 20px;
+    width: 60px;
+}
+
+.display-flex{
+    display: flex;
+    margin: 0 auto;
+    margin-left: 50px;
+}

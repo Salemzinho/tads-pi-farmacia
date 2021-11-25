@@ -28,7 +28,8 @@
                         <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
                         <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
                         <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.jsp">Login</a></li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,12 +38,12 @@
             <div class="card-nome">
                 <h2>Consulta Cliente</h2>
             </div>
-            
-            
+
+
 
             <form method="POST" action='ClienteFarmaciaServlet' name="frmPesquisaCliente">
                 <input placeholder ="Pesquisa por nome" type="text" name="busca"
-                                           value="<c:out value="${cliente.busca}" />" /> <br />
+                       value="<c:out value="${cliente.busca}" />" /> <br />
 
                 <input type="submit" value="Pesquisar"/>
                 <input type="hidden" name="action" value="pesquisa"/>
