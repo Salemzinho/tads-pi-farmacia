@@ -27,9 +27,9 @@ import javax.servlet.http.HttpServletResponse;
 public class ProdutoServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static String INSERT_OR_EDIT = "/produto/cadastroProduto.jsp";
-    private static String LIST_PRO = "/produto/listaProduto.jsp";
-    private static String PESQUISA = "/produto/pesquisarProduto.jsp";
+    private static String INSERT_OR_EDIT = "/protegido/produto/cadastroProduto.jsp";
+    private static String LIST_PRO = "/protegido/produto/listaProduto.jsp";
+    private static String PESQUISA = "/protegido/produto/pesquisarProduto.jsp";
     private ProdutoDAO dao;
 
     public ProdutoServlet() throws ClassNotFoundException, SQLException {

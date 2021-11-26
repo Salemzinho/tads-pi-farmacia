@@ -41,7 +41,7 @@ public class RelatorioServlet extends HttpServlet {
      */
    
     private static final long serialVersionUID = 1L;
-    private static String LIST_PRO = "/venda/listaRelatorio.jsp";
+    private static String LIST_PRO = "/protegido/venda/listaRelatorio.jsp";
     private SinteticoDAO dao;
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 

@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author maris
+ * @author vinis
  */
 public class AutorizacaoFilter implements Filter {
     
@@ -40,7 +40,7 @@ public class AutorizacaoFilter implements Filter {
         
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-        
+        System.out.println("passou pelo filtro");
         //passo 1 - usuário está logado?
         HttpSession sessao = httpServletRequest.getSession();
         Object usuario = sessao.getAttribute("usuario");

@@ -31,7 +31,7 @@ import javax.servlet.http.HttpServletResponse;
 public class VendaServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static String LIST_PRO = "/venda/venda.jsp";
+    private static String LIST_PRO = "/protegido/venda/venda.jsp";
 
     private static String INICIO = "/index.jsp";
     private ProdutoDAO dao;

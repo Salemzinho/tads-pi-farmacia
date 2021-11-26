@@ -21,7 +21,7 @@
             <nav>
                 <ul>
                     <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
-                    <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
+                    <li><a href="${pageContext.request.contextPath}">Produtos</a></li>
                     <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
                     <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
                     <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
@@ -36,7 +36,7 @@
         <div class="card-nome">
             <h2>Home</h2>
         </div>
-        <a href="ClienteFarmaciaServlet?action=listaClientes"><button class="home-button">Clientes</button></a>
+        <a href="../ClienteFarmaciaServlet?action=listaClientes"><button class="home-button">Clientes</button></a>
         <a href="ProdutoServlet?action=listaProdutos"><button class="home-button">Produtos</button></a>
         <a href="VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
         <a href="RelatorioServlet?action=listaVendas"><button class="home-button">Relatório</button></a>

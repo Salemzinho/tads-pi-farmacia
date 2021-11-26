@@ -39,9 +39,9 @@ public class ClienteFarmaciaServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     private static final long serialVersionUID = 1L;
-    private static String INSERT_OR_EDIT = "/cliente/cadastroCliente.jsp"; //colocar protegido
-    private static String LIST_USER = "/cliente/listaCliente.jsp";
-    private static String PESQUISA = "/cliente/pesquisarCliente.jsp";
+    private static String INSERT_OR_EDIT = "/protegido/cliente/cadastroCliente.jsp"; //colocar protegido
+    private static String LIST_USER = "/protegido/cliente/listaCliente.jsp";
+    private static String PESQUISA = "/protegido/cliente/pesquisarCliente.jsp";
     private ClienteDAO dao;
 
     public ClienteFarmaciaServlet() throws ClassNotFoundException, SQLException {
