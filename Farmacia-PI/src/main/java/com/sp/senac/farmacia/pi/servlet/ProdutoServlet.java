@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author maris
  */
-@WebServlet(name = "Produtos", urlPatterns = {"/ProdutoServlet"})
+@WebServlet(name = "Produtos", urlPatterns = {"/protegido/ProdutoServlet"})
 public class ProdutoServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;

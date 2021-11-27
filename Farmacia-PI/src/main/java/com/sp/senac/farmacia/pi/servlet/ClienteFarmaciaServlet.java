@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  *
  * @author maris
  */
-@WebServlet(name = "Clientes", urlPatterns = {"/ClienteFarmaciaServlet"})
+@WebServlet(name = "Clientes", urlPatterns = {"/protegido/ClienteFarmaciaServlet"})
 public class ClienteFarmaciaServlet extends HttpServlet {
 
     /**

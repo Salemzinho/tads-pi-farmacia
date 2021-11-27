@@ -27,13 +27,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author vinis
  */
-@WebServlet(name = "VendaServlet", urlPatterns = {"/VendaServlet"})
+@WebServlet(name = "VendaServlet", urlPatterns = {"/protegido/VendaServlet"})
 public class VendaServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private static String LIST_PRO = "/protegido/venda/venda.jsp";
 
-    private static String INICIO = "/index.jsp";
+    private static String INICIO = "/protegido/index.jsp";
     private ProdutoDAO dao;
     private ClienteDAO daoClie;
     private VendaDAO daoVenda;

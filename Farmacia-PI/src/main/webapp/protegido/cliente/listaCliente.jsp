@@ -26,13 +26,9 @@
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
-                        <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a><li>
-                        <li><a href="ProdutoServlet?action=listaProdutos">Produtos</a></li>
-                        <li><a href="ClienteFarmaciaServlet?action=listaClientes">Clientes</a></li>
-                        <li><a href="VendaServlet?action=listaProdutos">Vendas</a></li>
-                        <li><a href="RelatorioServlet?action=listaVendas">Relatórios</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                        <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
+                    <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
+                    <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
                     </ul>
                 </nav>
             </div>

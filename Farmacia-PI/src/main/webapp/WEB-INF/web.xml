@@ -50,7 +50,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>VendaServlet</servlet-name>
-        <url-pattern>/VendaServlet</url-pattern>
+        <url-pattern>/protegido/VendaServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

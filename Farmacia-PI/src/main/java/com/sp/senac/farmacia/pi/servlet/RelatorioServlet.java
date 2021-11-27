@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author vinis
  */
-@WebServlet(name = "RelatorioServlet", urlPatterns = {"/RelatorioServlet"})
+@WebServlet(name = "RelatorioServlet", urlPatterns = {"/protegido/RelatorioServlet"})
 public class RelatorioServlet extends HttpServlet {
 
     /**

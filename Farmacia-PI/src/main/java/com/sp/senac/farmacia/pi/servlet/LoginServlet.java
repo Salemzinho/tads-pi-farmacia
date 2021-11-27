@@ -47,8 +47,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
         sessao.invalidate();
-        response.sendRedirect(request.getContextPath() + "/protegido/index.jsp");
-
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 
 }
