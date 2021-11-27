@@ -14,28 +14,30 @@
 
         <title>Home Farmácia</title>
     </head>
-
-    <header>
-        <div class="container">
-            <h1>Farmacia</h1>
-            <nav>
-                <ul>
-                    <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                    <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
-                    <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
-                </ul>
-            </nav>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Farmacia</h1>
+                <nav>
+                    <ul>
+                        <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
+                        <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="card-cadastro-cliente">
+            <div class="card-nome">
+                <h2>Home</h2>
+            </div>
+            <c:if test="${sessionScope.usuario.isAdmin()}">
+                <a href="${pageContext.request.contextPath}/protegido/cliente/ClienteFarmaciaServlet?action=listaClientes"><button class="home-button">Clientes</button></a>
+                <a href="${pageContext.request.contextPath}/protegido/produto/ProdutoServlet?action=listaProdutos"><button class="home-button">Produtos</button></a>
+                <a href="${pageContext.request.contextPath}/protegido/relatorio/RelatorioServlet?action=listaVendas"><button class="home-button">Relatório</button></a>
+            </c:if>
+            <a href="${pageContext.request.contextPath}/protegido/venda/VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
         </div>
-    </header>
-    <div class="card-cadastro-cliente">
-        <div class="card-nome">
-            <h2>Home</h2>
-        </div>
-        <a href="${pageContext.request.contextPath}/protegido/ClienteFarmaciaServlet?action=listaClientes"><button class="home-button">Clientes</button></a>
-        <a href="${pageContext.request.contextPath}/protegido/ProdutoServlet?action=listaProdutos"><button class="home-button">Produtos</button></a>
-        <a href="${pageContext.request.contextPath}/protegido/VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
-        <a href="${pageContext.request.contextPath}/protegido/RelatorioServlet?action=listaVendas"><button class="home-button">Relatório</button></a>
-    </div>
-    <br>
-</body>
+        <br>
+    </body>
 </html>

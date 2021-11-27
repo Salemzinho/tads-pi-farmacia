@@ -27,7 +27,7 @@ public class Conexao {
                 Properties prop = new Properties();
 
                 String user = "root";
-                String password = "1234";
+                String password = "";
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/senac?useSSL=false", user, password);
 

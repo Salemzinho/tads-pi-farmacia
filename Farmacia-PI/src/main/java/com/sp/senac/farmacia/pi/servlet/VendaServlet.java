@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author vinis
  */
-@WebServlet(name = "VendaServlet", urlPatterns = {"/protegido/VendaServlet"})
+@WebServlet(name = "VendaServlet", urlPatterns = {"/protegido/venda/VendaServlet"})
 public class VendaServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -39,7 +39,6 @@ public class VendaServlet extends HttpServlet {
     private VendaDAO daoVenda;
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
     //public static List<Produto> produto = new ArrayList<Produto>();
-    
 
     public VendaServlet() throws ClassNotFoundException, SQLException {
         super();
@@ -54,10 +53,9 @@ public class VendaServlet extends HttpServlet {
         String forward = "";
         String action = request.getParameter("action");
 
-
-            forward = LIST_PRO;
-            request.setAttribute("produtos", dao.getTodosProdutos());
-            request.setAttribute("clientes", daoClie.getTodosClientes());
+        forward = LIST_PRO;
+        request.setAttribute("produtos", dao.getTodosProdutos());
+        request.setAttribute("clientes", daoClie.getTodosClientes());
 
         RequestDispatcher view = request.getRequestDispatcher(forward);
         view.forward(request, response);
@@ -68,29 +66,27 @@ public class VendaServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String action = request.getParameter("action");
-       
-            
-            Venda venda = new Venda();
-            ArrayList<ItemVenda> itemVendaList = new ArrayList<>();
-            ItemVenda itemVenda = new ItemVenda();
-            
-            itemVenda.setIdProduto(Integer.parseInt(request.getParameter("produto")));
-            itemVenda.setQuantidade(Integer.parseInt(request.getParameter("qtd")));
-            itemVendaList.add(itemVenda);
-            
-            Produto prod = dao.getProdutoId(itemVenda.getIdProduto());
-            
-            venda.setCliente(Integer.parseInt(request.getParameter("cliente")));
-            venda.setDtvenda(new Date());
-            venda.setValorFinal(prod.getValor() * itemVenda.getQuantidade());
-            venda.setItemVenda(itemVendaList);
 
-            boolean salvar = daoVenda.salvar(venda);
+        Venda venda = new Venda();
+        ArrayList<ItemVenda> itemVendaList = new ArrayList<>();
+        ItemVenda itemVenda = new ItemVenda();
 
-            RequestDispatcher view = request.getRequestDispatcher(INICIO);
-            request.setAttribute("produtos", dao.getTodosProdutos());
-            view.forward(request, response);
+        itemVenda.setIdProduto(Integer.parseInt(request.getParameter("produto")));
+        itemVenda.setQuantidade(Integer.parseInt(request.getParameter("qtd")));
+        itemVendaList.add(itemVenda);
 
-        
+        Produto prod = dao.getProdutoId(itemVenda.getIdProduto());
+
+        venda.setCliente(Integer.parseInt(request.getParameter("cliente")));
+        venda.setDtvenda(new Date());
+        venda.setValorFinal(prod.getValor() * itemVenda.getQuantidade());
+        venda.setItemVenda(itemVendaList);
+
+        boolean salvar = daoVenda.salvar(venda);
+
+        RequestDispatcher view = request.getRequestDispatcher("/sucessoVenda.jsp");
+        request.setAttribute("produtos", dao.getTodosProdutos());
+        view.forward(request, response);
+
     }
 }

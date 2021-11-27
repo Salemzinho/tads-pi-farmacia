@@ -46,11 +46,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ClienteFarmaciaSerlvet</servlet-name>
-        <url-pattern>/ClienteFarmaciaSerlvet</url-pattern>
+        <url-pattern>/protegido/cliente/ClienteFarmaciaSerlvet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>VendaServlet</servlet-name>
-        <url-pattern>/protegido/VendaServlet</url-pattern>
+        <url-pattern>/protegido/venda/VendaServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -62,6 +62,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>/login.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
