@@ -43,7 +43,7 @@
                 <h2>Cadastro Cliente</h2>
             </div>
             <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
-
+ 
                 <input placeholder="ID" id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${cliente.id}" />" />
 
 
