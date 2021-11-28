@@ -20,7 +20,8 @@
 
     <body>
         <header>
-            <div class="container">
+            <div class="body-css">
+            <div class="container-css">
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
@@ -53,5 +54,6 @@
             </form>
         </div>
         <br>
+</div>
     </body>
 </html>

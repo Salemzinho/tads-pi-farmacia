@@ -15,8 +15,9 @@
         <link rel="stylesheet" href="../../css/main.css">
     </head>
     <body>
+        <div class="body-css">
         <header>
-            <div class="container">
+            <div class="container-css">
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
@@ -99,6 +100,7 @@
                 <input type="submit" value="Cadastrar" />
                 <input type="hidden" name="action" value="incluir"/>
             </form> 
+        </div>
         </div>
     </body>
 </html>
