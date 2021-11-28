@@ -19,8 +19,9 @@
 
     </head>
     <body>
+        <div class="body-css">
         <header>
-            <div class="container">
+            <div class="container-css">
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
@@ -56,5 +57,6 @@
             </form>
         </div>
         <br>
+        </div>
     </body>
 </html>

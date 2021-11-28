@@ -13,8 +13,9 @@
         <title>Não Autorizado</title>
     </head>
     <body>
+        <div class="body-css">
         <header>
-            <div class="container">
+            <div class="container-css">
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
@@ -29,5 +30,6 @@
 
         <h2>Acesso não autorizado!</h2> <br/>
         <a href="${pageContext.request.contextPath}/protegido/index.jsp">Voltar</a>
+        </div>
     </body>
 </html>

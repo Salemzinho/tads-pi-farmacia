@@ -31,7 +31,7 @@
     list-style: none;
 }
 
-body {
+.body-css {
     background-color: rgb(230, 230, 230);
 }
 
@@ -65,7 +65,7 @@ header nav ul li a {
     font-family: arial;
 }
 
-.container {
+.container-css {
     margin-left: 10%;
     margin-right: 10%;
 }

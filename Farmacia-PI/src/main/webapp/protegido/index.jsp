@@ -15,8 +15,9 @@
         <title>Home Farmácia</title>
     </head>
     <body>
+        <div class="body-css">
         <header>
-            <div class="container">
+            <div class="container-css">
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
@@ -53,7 +54,7 @@
             </c:if>
 
 
-
+        </div>
         </div>
         <br>
     </body>

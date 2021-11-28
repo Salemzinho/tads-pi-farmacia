@@ -16,8 +16,9 @@
         <title>Login</title>
     </head>
     <body>
+        <div class="body-css">
         <header>
-            <div class="container">
+            <div class="container-css">
                 <h1>Farmacia</h1>
 
             </div>
@@ -38,6 +39,7 @@
 
                 <input class="btn btn-primary" type="submit" value="Acessar">
             </form>
+        </div>
         </div>
     </body>
 </html>
