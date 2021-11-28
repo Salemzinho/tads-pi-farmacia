@@ -15,42 +15,43 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="../../css/main.css">
-        
+
     </head>
-    
+
     <body>
         <header>
-        <div class="container">
-            <h1>Farmacia</h1>
-            <nav>
-                <ul>
-                    <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                    <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
-                    <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
-                </ul>
-            </nav>
+            <div class="container">
+                <h1>Farmacia</h1>
+                <nav>
+                    <ul>
+                        <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="card-cadastro-cliente">
+            <div class="card-nome">
+                <h2>Cadastro Produto</h2>
+            </div>
+            <form method="POST" action='ProdutoServlet' name="frmCadastroProduto">
+                <input placeholder="ID" id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${produto.id}" />" />
+
+                <input placeholder="Produto" style="width: 320px;" type="text" name="nome" value="<c:out value="${produto.nome}" />" />
+
+                <input placeholder="Fabricante" type="text" name="fabricante" value="<c:out value="${produto.fabricante}"/>" />
+
+                <input placeholder="QTD" type="text" name="qtd" value="<c:out value="${produto.qtd}"/>" />
+
+                <input placeholder="Valor" type="text" name="valor" value="<c:out value="${produto.valor}"/>" />
+
+                <input type="submit" value="Cadastrar" />
+                <input type="hidden" name="action" value="incluir"/>
+            </form>
         </div>
-    </header>
-        
-    <div class="card-cadastro-cliente">
-        <div class="card-nome">
-            <h2>Cadastro Produto</h2>
-        </div>
-        <form method="POST" action='ProdutoServlet' name="frmCadastroProduto">
-            <input placeholder="ID" id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${produto.id}" />" />
-
-            <input placeholder="Produto" style="width: 320px;" type="text" name="nome" value="<c:out value="${produto.nome}" />" />
-
-            <input placeholder="Fabricante" type="text" name="fabricante" value="<c:out value="${produto.fabricante}"/>" />
-            
-            <input placeholder="QTD" type="text" name="qtd" value="<c:out value="${produto.qtd}"/>" />
-            
-            <input placeholder="Valor" type="text" name="valor" value="<c:out value="${produto.valor}"/>" />
-
-            <input type="submit" value="Cadastrar" />
-            <input type="hidden" name="action" value="incluir"/>
-        </form>
-    </div>
-    <br>
+        <br>
     </body>
 </html>

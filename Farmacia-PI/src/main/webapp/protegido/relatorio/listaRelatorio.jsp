@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../../css/main.css">
         <title>Relatórios</title>
@@ -38,9 +38,10 @@
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
-                    <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                    <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
-                    <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                        <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
                     </ul>
                 </nav>
             </div>
@@ -75,7 +76,7 @@
                 <input type="submit" value="Pesquisar"/>
                 <input type="hidden" name="action" value="pesquisa"/><br>
 
-                
+
 
             </form>
         </div>

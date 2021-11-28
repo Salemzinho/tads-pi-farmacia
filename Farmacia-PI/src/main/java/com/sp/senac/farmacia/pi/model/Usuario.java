@@ -25,7 +25,19 @@ public class Usuario {
     public boolean isAdmin() {
         return this.perfil.equalsIgnoreCase("admin");
     }
-    
-    //criar perfil como métodos do exemplo acima
 
+    public boolean isGerente() {
+        return this.perfil.equalsIgnoreCase("gerente");
+    }
+
+    public boolean isBackOffice() {
+        return this.perfil.equalsIgnoreCase("back");
+    }
+    
+    public boolean isVendedor(){
+        return this.perfil.equalsIgnoreCase("vendedor");
+    }
+
+
+    //criar perfil como métodos do exemplo acima
 }

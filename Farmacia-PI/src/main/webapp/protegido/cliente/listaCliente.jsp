@@ -14,11 +14,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Clientes</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-
         <!-- CSS -->
         <link rel="stylesheet" href="../../css/main.css">
+
     </head>
     <body>
         <header>
@@ -27,8 +25,9 @@
                 <nav>
                     <ul>
                         <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                    <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
-                    <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
                     </ul>
                 </nav>
             </div>
@@ -66,7 +65,6 @@
             </br>
 
             <p><a href="ClienteFarmaciaServlet?action=incluir">Cadastrar Cliente</a></p>
-            </br>
             <p><a href="ClienteFarmaciaServlet?action=pesquisar">Pesquisar Cliente</a></p>
             <!-- Aqui entra o pesquisar cliente que direciona pra pagina como no cadastro. 
             na pagnia pesquisar seguir o mesmo fluxo do cadastro-->

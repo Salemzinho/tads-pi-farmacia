@@ -24,8 +24,9 @@
                 <nav>
                     <ul>
                         <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                        <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
                         <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
                     </ul>
                 </nav>
             </div>

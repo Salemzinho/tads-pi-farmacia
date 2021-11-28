@@ -43,7 +43,7 @@ public class AutorizacaoFilter implements Filter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         System.out.println("passou pelo filtro");
 
-//passo 1 - usuário está logado?
+        //passo 1 - usuário está logado?
         HttpSession sessao = httpServletRequest.getSession();
         Object usuario = sessao.getAttribute("usuario");
         if (usuario == null) { //nao está logado
@@ -51,17 +51,31 @@ public class AutorizacaoFilter implements Filter {
 
         }
 
-        //passo 2 - permissão do vendedor
+        //PERMISSÕES DE ACESSO DE ACORDO COM PERFIL
         Usuario usuarioSistema = (Usuario) usuario;
         String url = httpServletRequest.getRequestURI();
-        if((url.contains("/protegido/cliente/") || 
-                url.contains("/protegido/produto/") || 
-                url.contains("protegido/relatorio/")) && !usuarioSistema.isAdmin()){
+
+        //permissao do vendedor
+        if ((url.contains("/protegido/cliente/") 
+                || url.contains("/protegido/produto/")
+                || url.contains("protegido/relatorio/"))
+                && (!usuarioSistema.isBackOffice()
+                && !usuarioSistema.isGerente() && !usuarioSistema.isAdmin())) {
             httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/blockAcesso.jsp");
         }
         
+        //permissao do gerente
+        if ((url.contains("protegido/cliente") || url.contains("protegido/produto"))
+                && (!usuarioSistema.isBackOffice() && !usuarioSistema.isAdmin() && !usuarioSistema.isVendedor())) {
+            httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/blockAcesso.jsp");
+        }
         
-        
+        //permissao do backoffice
+        if((url.contains("/protegido/venda")) && 
+                (!usuarioSistema.isAdmin() && !usuarioSistema.isVendedor() && !usuarioSistema.isGerente())){
+            httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/blockAcesso.jsp");
+        }
+
     }
 
     private void doAfterProcessing(ServletRequest request, ServletResponse response)

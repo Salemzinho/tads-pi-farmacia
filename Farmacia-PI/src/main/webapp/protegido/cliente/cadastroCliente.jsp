@@ -16,44 +16,45 @@
         <!-- CSS -->
         <link rel="stylesheet" href="../../css/main.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     </head>
     <body>
         <header>
-        <div class="container">
-            <h1>Farmacia</h1>
-            <nav>
-                <ul>
-                  <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                    <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
-                    <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
-                </ul>
-            </nav>
+            <div class="container">
+                <h1>Farmacia</h1>
+                <nav>
+                    <ul>
+                        <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="card-cadastro-cliente">
+            <div class="card-nome">
+                <h2>Cadastro Cliente</h2>
+            </div>
+            <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
+
+                <input placeholder="ID" id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${cliente.id}" />" />
+
+
+                <input placeholder="Nome" style="width: 320px;" type="text" name="nome" value="<c:out value="${cliente.nome}" />" />
+
+                <input placeholder="CPF" type="text" name="CPF" value="<c:out value="${cliente.CPF}" />" />
+
+                <input placeholder="Telefone" type="text" name="telCliente" value="<c:out value="${cliente.telCliente}" />" />
+
+                <input placeholder="E-mail" type="text" name="email" value="<c:out value="${cliente.email}" />" />
+
+                <input type="submit" value="Cadastrar" />
+                <input type="hidden" name="action" value="incluir"/>
+
+            </form>
         </div>
-    </header>
-        
-    <div class="card-cadastro-cliente">
-        <div class="card-nome">
-            <h2>Cadastro Cliente</h2>
-        </div>
-        <form method="POST" action='ClienteFarmaciaServlet' name="frmCadastroCliente">
-            
-            <input placeholder="ID" id="id-produto" type="text" readonly="readonly" name="id" value="<c:out value="${cliente.id}" />" />
-            
-            
-            <input placeholder="Nome" style="width: 320px;" type="text" name="nome" value="<c:out value="${cliente.nome}" />" />
-            
-            <input placeholder="CPF" type="text" name="CPF" value="<c:out value="${cliente.CPF}" />" />
-
-            <input placeholder="Telefone" type="text" name="telCliente" value="<c:out value="${cliente.telCliente}" />" />
-
-            <input placeholder="E-mail" type="text" name="email" value="<c:out value="${cliente.email}" />" />
-
-            <input type="submit" value="Cadastrar" />
-            <input type="hidden" name="action" value="incluir"/>
-
-        </form>
-    </div>
         <br>
     </body>
 </html>

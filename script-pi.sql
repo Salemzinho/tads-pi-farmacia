@@ -51,6 +51,9 @@ CREATE TABLE IF NOT EXISTS Venda (
   FOREIGN KEY (idCliente) REFERENCES Cliente (id))
 ENGINE = InnoDB;
 
+select * from venda;
+
+delete from venda where id = 19;
 
 INSERT INTO venda (valorFinal, idCliente, dtvenda) values
 (23.46, 1, '2021-05-10'),
@@ -99,9 +102,12 @@ CREATE TABLE usuario (
 describe usuario;
 select * from usuario;
 
-insert into usuario (nome, usuario, senha, perfil) values ('Administrator', 'admin', '1234', 'admin');
-insert into usuario (nome, usuario, senha, perfil) values ('Mike Wilson', 'mike', '1234', 'vendedor');
+/*ATENÇÃO: senha de todos os perfils: 1234*/
 
+insert into usuario (nome, usuario, senha, perfil) values ('Administrator', 'admin', '$2a$08$V8ri3vKN214TftTIs5cy7O1aa6xqnzWikmQdRjZdynmLmHOlUl.wm', 'admin');
+insert into usuario (nome, usuario, senha, perfil) values ('Vendedor', 'vendedor', '$2a$08$V8ri3vKN214TftTIs5cy7O1aa6xqnzWikmQdRjZdynmLmHOlUl.wm', 'vendedor');
+insert into usuario (nome, usuario, senha, perfil) values ('Gerente', 'gerente', '$2a$08$V8ri3vKN214TftTIs5cy7O1aa6xqnzWikmQdRjZdynmLmHOlUl.wm', 'gerente');
+insert into usuario	(nome, usuario, senha, perfil) values ('BackOffice', 'back', '$2a$08$V8ri3vKN214TftTIs5cy7O1aa6xqnzWikmQdRjZdynmLmHOlUl.wm', 'back');
 
 
 /* ================================================================================================================

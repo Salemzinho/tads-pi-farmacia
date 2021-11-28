@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="../css/main.css">
 
         <title>Home Farmácia</title>
     </head>
@@ -21,7 +21,7 @@
                 <nav>
                     <ul>
                         <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                        <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
                         <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
                     </ul>
                 </nav>
@@ -35,8 +35,25 @@
                 <a href="${pageContext.request.contextPath}/protegido/cliente/ClienteFarmaciaServlet?action=listaClientes"><button class="home-button">Clientes</button></a>
                 <a href="${pageContext.request.contextPath}/protegido/produto/ProdutoServlet?action=listaProdutos"><button class="home-button">Produtos</button></a>
                 <a href="${pageContext.request.contextPath}/protegido/relatorio/RelatorioServlet?action=listaVendas"><button class="home-button">Relatório</button></a>
+                <a href="${pageContext.request.contextPath}/protegido/venda/VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
             </c:if>
-            <a href="${pageContext.request.contextPath}/protegido/venda/VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
+            <c:if test="${sessionScope.usuario.isGerente()}">
+                <a href="${pageContext.request.contextPath}/protegido/relatorio/RelatorioServlet?action=listaVendas"><button class="home-button">Relatório</button></a>
+                <a href="${pageContext.request.contextPath}/protegido/venda/VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
+            </c:if>
+
+            <c:if test="${sessionScope.usuario.isBackOffice()}">
+                <a href="${pageContext.request.contextPath}/protegido/cliente/ClienteFarmaciaServlet?action=listaClientes"><button class="home-button">Clientes</button></a>
+                <a href="${pageContext.request.contextPath}/protegido/produto/ProdutoServlet?action=listaProdutos"><button class="home-button">Produtos</button></a>
+                <a href="${pageContext.request.contextPath}/protegido/relatorio/RelatorioServlet?action=listaVendas"><button class="home-button">Relatório</button></a>
+
+            </c:if>
+            <c:if test="${sessionScope.usuario.isVendedor()}">
+                <a href="${pageContext.request.contextPath}/protegido/venda/VendaServlet?action=listaProdutos"><button class="home-button">Venda</button></a>
+            </c:if>
+
+
+
         </div>
         <br>
     </body>

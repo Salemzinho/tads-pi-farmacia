@@ -24,9 +24,10 @@
                 <h1>Farmacia</h1>
                 <nav>
                     <ul>
-                    <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                    <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
-                    <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                        <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
+                        <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
                     </ul>
                 </nav>
             </div>
@@ -35,10 +36,10 @@
             <div class="card-nome">
                 <h2>Consulta Produto</h2>
             </div>
-          
+
             <form method="POST" action='ProdutoServlet' name="frmPesquisaProduto">
                 <input placeholder="Pesquisa por nome" type="text" name="busca"
-                                           value="<c:out value="${produto.busca}" />" /> <br />
+                       value="<c:out value="${produto.busca}" />" /> <br />
 
                 <input type="submit" value="Pesquisar"/>
                 <input type="hidden" name="action" value="pesquisa"/>

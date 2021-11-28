@@ -21,25 +21,27 @@ import java.util.logging.Logger;
 public class UsuarioDAO {
 
 
-    public static Usuario getUsuario(String login, String senha) {
+    public static Usuario getUsuario(String login) {
         Connection con = Conexao.getConexao();
         Usuario usuario = null;
         try {
             PreparedStatement ps;
-            ps = con.prepareStatement("select * from usuario where usuario=? and senha=?;");
+            ps = con.prepareStatement("select * from usuario where usuario=?;");
             ps.setString(1, login);
-            ps.setString(2, senha);
+            //ps.setString(2, senha);
             ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
                 int id = rs.getInt("id");
                 String nome = rs.getString("nome");
                 String perfil = rs.getString("perfil");
+                String senhaFechada = rs.getString("senha");
                 usuario = new Usuario();
                 usuario.setId(id);
                 usuario.setNome(nome);
                 usuario.setPerfil(perfil);
                 usuario.setUsuario(login);
+                usuario.setSenha(senhaFechada);
             }
 
         } catch (SQLException ex) {

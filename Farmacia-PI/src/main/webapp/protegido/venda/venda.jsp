@@ -21,8 +21,9 @@
                 <nav>
                     <ul>
                         <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
-                        <li>Bem-vindo, ${sessionScope.usuario.nome}</li>
+                        <li><a> Bem-vindo, ${sessionScope.usuario.nome}</a></li>
                         <li><a href="${pageContext.request.contextPath}/LoginServlet">Sair</a></li>
+                    </ul>
                     </ul>
                 </nav>
             </div>
@@ -37,7 +38,7 @@
                         <th>Fabricante</th>
                         <th>QTD</th>
                         <th>Valor</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +50,7 @@
                             <td><c:out value="${produto.qtd}"/></td>
                             <td><c:out value="${produto.valor}"/></td>
 
-                            
+
                         </tr>
                     </c:forEach>
                 </tbody>
