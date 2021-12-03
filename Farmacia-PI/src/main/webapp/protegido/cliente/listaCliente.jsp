@@ -40,7 +40,7 @@
                 </nav>
             </div>
         </header>
-        <div class="card-cadastro-cliente">
+        <div style="width: 600px;" class="card-cadastro-cliente">
             <table class="table">
                 <thead>
                     <tr>
