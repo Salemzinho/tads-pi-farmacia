@@ -23,10 +23,10 @@
     </head>
 
     <body>
+        <div class="body-css">
         <header>
-            <div class="body-css">
             <div class="container-css">
-                <h1>Farmacia</h1>
+                <h1>Farmácia</h1>
                 <nav>
                     <ul>
                         <li><a href="${pageContext.request.contextPath}/protegido/index.jsp">Home</a><li>
